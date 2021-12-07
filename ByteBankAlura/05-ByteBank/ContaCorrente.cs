@@ -1,6 +1,4 @@
 ﻿
-using _05_ByteBank;
-
 public class ContaCorrente
 {
     public Cliente titular;
