@@ -1,8 +1,15 @@
-﻿public class Cliente
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _05_ByteBank
+{
+public class Cliente
 {
     public string nome;
-    public int cpf;
-    public int profissao;
+    public string cpf;
+    public string profissao;
 }
-
-
+}

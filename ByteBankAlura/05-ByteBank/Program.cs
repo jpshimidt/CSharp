@@ -10,8 +10,10 @@ namespace _05_ByteBank
     {
         static void Main(string[] args)
         {
-            
-            Console.ReadLine();
+            ContaCorrente contaDoJoao = new ContaCorrente();
+            contaDoJoao.titular = new Cliente();
+
+            contaDoJoao.titular.nome = "João Pedro";
         }
     }
 }
