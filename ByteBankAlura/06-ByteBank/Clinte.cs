@@ -7,7 +7,23 @@ namespace _06_ByteBank
     public class Cliente
     {
         public string nome;
-        public int cpf;
-        public int profissao;
+        public string Profissao { get; set; }
+        private string _cpf;
+
+        public string Cpf
+        {
+            get
+            {
+                return _cpf;
+            }
+            set
+            {
+                if (value.Length > 11)
+                {
+                    Console.WriteLine("Cpf inválido");
+                }
+                _cpf = value;
+            }
+        }
     }
 }
