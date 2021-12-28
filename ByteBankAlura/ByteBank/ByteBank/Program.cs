@@ -1,5 +1,6 @@
 ﻿using System;
 using ByteBank.Funcionarios;
+using ByteBank.Sistemas;
 
 namespace ByteBank
 {
@@ -9,16 +10,27 @@ namespace ByteBank
         {
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
 
+            UsarSistema();
+        }
+
+        public static void UsarSistema()
+        {
+            SistemaInterno sistemaInterno = new SistemaInterno();
+
             Diretor roberta = new Diretor("111.111.1111")
             {
                 Nome = "Roberta",
+                Senha = "123"
             };
 
-            Console.WriteLine(roberta.Nome);
-            Console.WriteLine(roberta.GetBonificacao());
+            GerenteDeConta camila = new GerenteDeConta("222.222.2222")
+            {
+                Nome = "Camila",
+                Senha = "ABC"
+            };
 
-            Console.WriteLine("Total de bonificações: R$ " + gerenciador.GetTotalBonificacao());
-            Console.ReadLine();
+            sistemaInterno.Logar(roberta, "123");
+            sistemaInterno.Logar(camila, "ABC");
         }
 
         public static void CalcularBonificacao()
