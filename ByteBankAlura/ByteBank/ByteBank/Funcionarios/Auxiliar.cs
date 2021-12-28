@@ -4,21 +4,21 @@ using System.Text;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Funcionario
+    public class Auxiliar : Funcionario
     {
-        public Diretor(string cpf) : base(5000, cpf)
+        public Auxiliar(string cpf) : base (2000, cpf)
         {
 
         }
 
         public override void AumentarSalario()
         {
-            Salario *= 1.15;
+            Salario *= 1.1;
         }
 
         public override double GetBonificacao()
         {
-            return Salario * 0.5;
+            return Salario * 0.2;
         }
     }
 }
