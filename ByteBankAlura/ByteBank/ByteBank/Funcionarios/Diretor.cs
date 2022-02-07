@@ -1,9 +1,4 @@
-﻿using ByteBank.Sistemas;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ByteBank.Funcionarios
+﻿namespace ByteBank.Funcionarios
 {
     public class Diretor : FuncionarioAutenticavel
     {

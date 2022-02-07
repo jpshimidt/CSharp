@@ -1,9 +1,4 @@
-﻿using ByteBank.Funcionarios;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ByteBank.Sistemas
+﻿namespace ByteBank.Sistemas
 {
     public interface IAutenticavel
     {

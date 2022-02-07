@@ -1,6 +1,5 @@
 ﻿using System;
-using ByteBank.Funcionarios;
-using ByteBank.Sistemas;
+using ByteBank.Operacoes;
 
 namespace ByteBank
 {
@@ -8,41 +7,85 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+            CarregarContas();
 
-            UsarSistema();
+            Console.WriteLine("Execução finalizada. Tecle enter para sair");
+            Console.ReadLine();
         }
 
-        public static void UsarSistema()
+
+
+        private static void CarregarContas()
         {
-            SistemaInterno sistemaInterno = new SistemaInterno();
-
-            Diretor roberta = new Diretor("111.111.1111")
+            using (LeitorDeArquivo leitor = new LeitorDeArquivo("teste.txt"))
             {
-                Nome = "Roberta",
-                Senha = "123"
-            };
+                leitor.LerProximaLinha();
+            }
 
-            GerenteDeConta camila = new GerenteDeConta("222.222.2222")
+
+            /*LeitorDeArquivo leitor = null;
+
+            try
             {
-                Nome = "Camila",
-                Senha = "ABC"
-            };
-
-            ParceiroComercial Luciano = new ParceiroComercial()
+                new LeitorDeArquivo("contas1.txt");
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+            }
+            catch(IOException)
             {
-                Senha = "987"
-            };
-
-            sistemaInterno.Logar(roberta, "123");
-            sistemaInterno.Logar(camila, "ABC");
-            sistemaInterno.Logar(Luciano, "ABC");
-            sistemaInterno.Logar(Luciano, "987");
+                Console.WriteLine("Exceção do tipo IOException capturada e tratada!");
+            }
+            finally
+            {
+                if(leitor != null)
+                {
+                    leitor.Fechar();
+                }
+            }*/
         }
 
-        public static void CalcularBonificacao()
+        private static void TestaInnerException()
         {
+            try
+            {
+                ContaCorrente conta = new ContaCorrente(457, 55555);
+                ContaCorrente conta2 = new ContaCorrente(458, 55556);
 
+                conta2.Transferir(10000, conta);
+            }
+
+            catch (ArgumentException ex)
+            {
+                if (ex.ParamName == "numero")
+                {
+
+                }
+
+                Console.WriteLine("Argumento com problema: " + ex.ParamName);
+                Console.WriteLine("Ocorreu uma exceção do tipo ArgumentException");
+                Console.WriteLine(ex.Message);
+            }
+            catch (SaldoInsulficenteException ex)
+            {
+                Console.WriteLine(ex.Saldo);
+                Console.WriteLine(ex.ValorSaque);
+
+                Console.WriteLine(ex.StackTrace);
+
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Exceção do tipo SaldoInsulficienteException");
+            }
+            catch (OperacaoFinanceiraException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+
+                Console.WriteLine("informações da INNER EXCEPTION (Exceção interna):");
+                Console.WriteLine(e.InnerException.Message);
+                Console.WriteLine(e.InnerException.StackTrace);
+            }
         }
+
     }
 }

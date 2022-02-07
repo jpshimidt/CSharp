@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ByteBank.Funcionarios
+﻿namespace ByteBank.Funcionarios
 {
     public class Auxiliar : Funcionario
     {
-        public Auxiliar(string cpf) : base (2000, cpf)
+        public Auxiliar(string cpf) : base(2000, cpf)
         {
 
         }
