@@ -1,6 +1,6 @@
-﻿using ByteBank.Funcionarios;
+﻿using ByteBank.Modelos.Funcionarios;
 
-namespace ByteBank
+namespace ByteBank.Modelos
 {
     public class GerenciadorBonificacao
     {
@@ -9,7 +9,6 @@ namespace ByteBank
         {
             _totalBonificacao += funcionario.GetBonificacao();
         }
-
         public double GetTotalBonificacao()
         {
             return _totalBonificacao;

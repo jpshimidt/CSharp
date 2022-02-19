@@ -1,6 +1,6 @@
 ﻿using System;
-
-namespace ByteBank.Operacoes
+ 
+namespace ByteBank.Modelos
 {
     public class Cliente
     {

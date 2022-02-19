@@ -1,8 +1,7 @@
-﻿namespace ByteBank.Funcionarios
+﻿namespace ByteBank.Modelos.Funcionarios
 {
     public class Diretor : FuncionarioAutenticavel
     {
-
         public Diretor(string cpf) : base(5000, cpf)
         {
 

@@ -1,11 +1,13 @@
 ﻿using System;
-namespace ByteBank
+using System.Collections.Generic;
+using System.Text;
+
+namespace ByteBank.Modelos
 {
     public class SaldoInsulficenteException : OperacaoFinanceiraException
     {
         public double Saldo { get; }
         public double ValorSaque { get; }
-
         public SaldoInsulficenteException() { }
 
         public SaldoInsulficenteException(double saldo, double valorSaque) :
@@ -17,7 +19,6 @@ namespace ByteBank
         }
 
         public SaldoInsulficenteException(string mensagem, Exception excecaoInterna) : base(mensagem, excecaoInterna) { }
-
         public SaldoInsulficenteException(string mensagem) : base(mensagem) { }
     }
 }

@@ -1,7 +1,6 @@
-﻿using ByteBank.Sistemas;
-using System;
+﻿using System;
 
-namespace ByteBank
+namespace ByteBank.Modelos
 {
     public class ParceiroComercial : IAutenticavel
     {

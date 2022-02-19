@@ -1,7 +1,4 @@
-﻿using ByteBank.Funcionarios;
-using ByteBank.Sistemas;
-
-namespace ByteBank
+﻿namespace ByteBank.Modelos.Funcionarios
 {
     public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel
     {
