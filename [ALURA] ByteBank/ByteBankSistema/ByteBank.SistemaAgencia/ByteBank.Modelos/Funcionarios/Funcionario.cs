@@ -16,7 +16,11 @@
             TotalDeFuncionarios++;
         }
 
-        public abstract double GetBonificacao();
+        protected internal virtual double GetBonificacao() 
+        {
+            return 0;
+        }
+
         public abstract void AumentarSalario();
     }
 }
