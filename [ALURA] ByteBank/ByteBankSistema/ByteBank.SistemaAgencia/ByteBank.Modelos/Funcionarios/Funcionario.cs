@@ -16,7 +16,7 @@
             TotalDeFuncionarios++;
         }
 
-        protected internal virtual double GetBonificacao() 
+        protected internal virtual double GetBonificacao()
         {
             return 0;
         }
